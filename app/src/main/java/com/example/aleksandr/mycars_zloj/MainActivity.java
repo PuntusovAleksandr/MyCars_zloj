@@ -75,7 +75,7 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
         transaction.add(R.id.ll_brend, brendActivity, BrendActivity.TAG);
         transaction.add(R.id.ll_model, modelActivity, ModelActivity.TAG);
         transaction.commit();
-        showEngine();
+//        showEngine();
     }
 
     public void doTransaction(View view) {
@@ -344,13 +344,14 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
 
         dbModel = new ModelDataBaseImpl(getApplicationContext(), MODEL_TABLE, null, VERSION_TABLE);
 
-//        int idModel = modelActivity.getModelSelectedSpinner();
-//        String name = ModelActivity.spModel.getSelectedItem().toString();
-//        int idModel = dbModel.getIdModel(name);
-//        masEngines = dbEngine.getListEngines(idModel);
-        Log.d(StaticVariables.LOG_TAG, "--- engine size is  " +masEngines.size() +"---");
+        boolean re = true;
+        if (ModelActivity.spModel != null) {
+            String name = ModelActivity.spModel.getSelectedItem().toString();
+            int idModel = dbModel.getIdModel(name);
+            masEngines = dbEngine.getListEngines(idModel);
+        } else masEngines = dbEngine.getAllEngine();
 
-        masEngines = dbEngine.getAllEngine();
+        Log.d(StaticVariables.LOG_TAG, "--- engine size is  " +masEngines.size() +"---");
 
         List<String> masString = new ArrayList<>();
 
@@ -363,6 +364,14 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         adapter.notifyDataSetChanged();
         listView.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        showEngine();
+        brendActivity.showBrend();
+        modelActivity.showModel();
     }
 
 }
