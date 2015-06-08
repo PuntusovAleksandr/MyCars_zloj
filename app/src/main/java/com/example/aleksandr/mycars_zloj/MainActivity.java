@@ -224,7 +224,6 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
                             public void onClick(DialogInterface dialog, int which) {
                                 int idEng = dbEngine.getIdEngine(listView.getSelectedItem().toString());
                                 dbEngine.deleteEngine(idEng);
-                                editText.setText("");
                                 showEngine();
                             }
                         });
@@ -344,6 +343,7 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
         }
 
         dbModel = new ModelDataBaseImpl(getApplicationContext(), MODEL_TABLE, null, VERSION_TABLE);
+
 //        int idModel = modelActivity.getModelSelectedSpinner();
 //        String name = ModelActivity.spModel.getSelectedItem().toString();
 //        int idModel = dbModel.getIdModel(name);
@@ -355,7 +355,7 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
         List<String> masString = new ArrayList<>();
 
         for (Engine engine : masEngines) {
-            masString.add(engine.getVolume());
+                masString.add(engine.getVolume());
         }
         Log.d(StaticVariables.LOG_TAG, "---end testing Model ---");
 
@@ -365,10 +365,4 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
         listView.setAdapter(adapter);
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        brendActivity.setIdBrend(brendActivity.getBrendSelectedSpinner());
-        modelActivity.setIdModel(modelActivity.getModelSelectedSpinner());
-    }
 }

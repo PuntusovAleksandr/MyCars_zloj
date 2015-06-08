@@ -83,27 +83,6 @@ public class ModelDataBaseImpl extends SQLiteOpenHelper implements DateBaseModel
         db.close();
         return models;
 
-//        List<Model> models = new ArrayList<>();
-//        Log.d(LOG_TAG, "--- get all models ---");
-//
-//        String query = "SELECT * FROM "+MODEL_TABLE+";";
-//        db = this.getReadableDatabase();
-//        cursor = db.rawQuery(query, null);
-//        cursor.moveToFirst();
-//        if(cursor.moveToFirst()) {
-//            Model model = null;
-//            do {
-//                if (cursor.getInt(2) == id) {
-//                    model = new Model();
-//                    model.setId(cursor.getInt(0));
-//                    model.setNameModel(cursor.getString(1));
-//                    model.setId_brend(cursor.getInt(2));
-//                    models.add(model);
-//                }
-//            } while (cursor.moveToNext());
-//        }
-//        db.close();
-//        return models;
     }
 
     @Override

@@ -37,7 +37,6 @@ public class BrendActivity extends Fragment implements StaticVariables {
 
     private ModelActivity modelActivity;
 
-    private int idBrend;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -76,8 +75,8 @@ public class BrendActivity extends Fragment implements StaticVariables {
         for (Brend brend : masBrend) {
             masString.add(brend.getNameBrend().toString());
         }
-
         Log.d(StaticVariables.LOG_TAG, "---end testing ---");
+
         adapter = new ArrayAdapter<String>(viewBrend.getContext(), android.R.layout.simple_spinner_item, masString);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         adapter.notifyDataSetChanged();
@@ -86,13 +85,5 @@ public class BrendActivity extends Fragment implements StaticVariables {
 
     public int getBrendSelectedSpinner() {
         return dbBrend.getIdBrend(spBrend.getSelectedItem().toString());
-    }
-
-    public int getIdBrend() {
-        return idBrend;
-    }
-
-    public void setIdBrend(int idBrend) {
-        this.idBrend = idBrend;
     }
 }

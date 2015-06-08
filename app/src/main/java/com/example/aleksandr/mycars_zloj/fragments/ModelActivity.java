@@ -39,7 +39,6 @@ public class ModelActivity extends Fragment implements StaticVariables{
 
     private BrendActivity brendActivity;
 
-    private int idModel;
 
 
     @Override
@@ -75,13 +74,11 @@ public class ModelActivity extends Fragment implements StaticVariables{
             db.addModel(new Model("Omega", 3), 3);
             db.addModel(new Model("Tuaro", 2), 2);
             db.addModel(new Model("310", 1), 1);
-
         }
-        brendActivity = new BrendActivity();
-        DateBaseBrend dbBrend = new BrendDataBaseImpl(getActivity(), BREND_TABLE, null, VERSION_TABLE);
 
+        DateBaseBrend dbBrend = new BrendDataBaseImpl(getActivity(), BREND_TABLE, null, VERSION_TABLE);
         masModel = db.getListModels(dbBrend.getIdBrend(BrendActivity.spBrend.getSelectedItem().toString()));
-        Log.d(LOG_TAG, "--- testing Model  2 sixe is" +masModel.size() + " ---");
+        Log.d(LOG_TAG, "--- testing Model  2 sixe is " +masModel.size() + " ---");
         Log.d(LOG_TAG, "--- Models ---");
 
         List<String> masString = new ArrayList<>();
@@ -100,11 +97,4 @@ public class ModelActivity extends Fragment implements StaticVariables{
         return db.getIdModel(spModel.getSelectedItem().toString());
     }
 
-    public int getIdModel() {
-        return idModel;
-    }
-
-    public void setIdModel(int idModel) {
-        this.idModel = idModel;
-    }
 }
