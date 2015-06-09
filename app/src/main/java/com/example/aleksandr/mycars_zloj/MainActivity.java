@@ -122,6 +122,8 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
                             dbBrend.addBrend(new Brend(editText.getText().toString()));
                             editText.setText("");
                             brendActivity.showBrend();
+                            modelActivity.showModel();
+                            showEngine();
                         }
                     });
                     alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -142,6 +144,7 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
                             dbModel.addModel(new Model(editText.getText().toString(), id_brend), id_brend);
                             editText.setText("");
                             modelActivity.showModel();
+                            showEngine();
                         }
                     });
                     alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -187,6 +190,8 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
                                 dbBrend.deleteBrend(idBr);
                                 editText.setText("");
                                 brendActivity.showBrend();
+                                modelActivity.showModel();
+                                showEngine();
                             }
                         });
                         alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -207,6 +212,7 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
                                 dbModel.deleteModel(idModel);
                                 editText.setText("");
                                 modelActivity.showModel();
+                                showEngine();
                             }
                         });
                         alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -255,6 +261,8 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
                                 dbBrend.renameBrend(name1, name2);
                                 editText.setText("");
                                 brendActivity.showBrend();
+                                modelActivity.showModel();
+                                showEngine();
                             }
                         });
                         alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -276,6 +284,7 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
                                 dbModel.renameModel(name1, name2);
                                 editText.setText("");
                                 modelActivity.showModel();
+                                showEngine();
                             }
                         });
                         alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
