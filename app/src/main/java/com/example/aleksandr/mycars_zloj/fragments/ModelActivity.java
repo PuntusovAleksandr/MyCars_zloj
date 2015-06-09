@@ -77,7 +77,12 @@ public class ModelActivity extends Fragment implements StaticVariables{
         }
 
         DateBaseBrend dbBrend = new BrendDataBaseImpl(getActivity(), BREND_TABLE, null, VERSION_TABLE);
-        masModel = db.getListModels(dbBrend.getIdBrend(BrendActivity.spBrend.getSelectedItem().toString()));
+
+        if (BrendActivity.spBrend != null) {
+            String name = BrendActivity.spBrend.getSelectedItem().toString();
+            int idBrend = dbBrend.getIdBrend(name);
+            masModel = db.getListModels(idBrend);
+        }else masModel = db.getAllModel();
         Log.d(LOG_TAG, "--- testing Model  2 sixe is " +masModel.size() + " ---");
         Log.d(LOG_TAG, "--- Models ---");
 
