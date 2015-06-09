@@ -75,7 +75,8 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
         transaction.add(R.id.ll_brend, brendActivity, BrendActivity.TAG);
         transaction.add(R.id.ll_model, modelActivity, ModelActivity.TAG);
         transaction.commit();
-//        showEngine();
+
+
     }
 
     public void doTransaction(View view) {
@@ -370,8 +371,6 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
     protected void onResume() {
         super.onResume();
         showEngine();
-        brendActivity.showBrend();
-        modelActivity.showModel();
     }
 
 }
