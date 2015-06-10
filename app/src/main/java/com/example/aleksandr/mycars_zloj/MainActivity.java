@@ -205,7 +205,7 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
                     }
                     if (!(brendFragmentByTag.isVisible()) &&
                             modelFragmentByTag.isVisible()) {
-                        alert.setTitle("Are you sure delite " + editText.getText().toString() + "?");
+                        alert.setTitle("Are you sure delite " + ModelActivity.spModel.getSelectedItem().toString() + "?");
                         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -356,9 +356,12 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
         dbModel = new ModelDataBaseImpl(getApplicationContext(), MODEL_TABLE, null, VERSION_TABLE);
 
         boolean re = true;
-        if (ModelActivity.spModel != null) {
+        if (ModelActivity.spModel.getSelectedItem().toString().length() > 0) {
             String name = ModelActivity.spModel.getSelectedItem().toString();
             int idModel = dbModel.getIdModel(name);
+            if (idModel <= 0) {
+                masEngines.add(new Engine(""));
+            }
             masEngines = dbEngine.getListEngines(idModel);
         } else masEngines = dbEngine.getAllEngine();
 

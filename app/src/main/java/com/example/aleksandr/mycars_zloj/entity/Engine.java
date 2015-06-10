@@ -25,6 +25,10 @@ public class Engine implements StaticVariables {
         this.id_model = id_model;
     }
 
+    public Engine(String s) {
+        this.volume=s;
+    }
+
     public int getId() {
         return id;
     }

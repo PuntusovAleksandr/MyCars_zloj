@@ -27,6 +27,11 @@ public class Model implements StaticVariables{
         this.id_brend = id_brend;
     }
 
+    public Model(String s) {
+        this.nameModel = s;
+
+    }
+
     public int getId() {
         return id;
     }

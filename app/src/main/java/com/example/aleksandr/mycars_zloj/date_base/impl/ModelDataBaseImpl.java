@@ -76,6 +76,8 @@ public class ModelDataBaseImpl extends SQLiteOpenHelper implements DateBaseModel
                     model.setId(cursor.getInt(0));
                     model.setNameModel(cursor.getString(1));
                     model.setId_brend(cursor.getInt(2));
+                    model.setYearsFrom(cursor.getInt(3));
+                    model.setYearsTo(cursor.getInt(4));
                     models.add(model);
                 }
             } while (cursor.moveToNext());
@@ -102,7 +104,9 @@ public class ModelDataBaseImpl extends SQLiteOpenHelper implements DateBaseModel
                     model.setId(cursor.getInt(0));
                     model.setNameModel(cursor.getString(1));
                     model.setId_brend(cursor.getInt(2));
-                    models.add(model);
+                model.setYearsFrom(cursor.getInt(3));
+                model.setYearsTo(cursor.getInt(4));
+                models.add(model);
             } while (cursor.moveToNext());
         }
         db.close();
@@ -148,6 +152,8 @@ public class ModelDataBaseImpl extends SQLiteOpenHelper implements DateBaseModel
                 model = new Model();
                 model.setId(cursor.getInt(0));
                 model.setNameModel(cursor.getString(1));
+                model.setYearsFrom(cursor.getInt(3));
+                model.setYearsTo(cursor.getInt(4));
                 models.add(model);
             } while (cursor.moveToNext());
         }
