@@ -23,13 +23,14 @@ public interface StaticVariables {
              "(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
              "name TEXT NOT NULL, " +
              "id_brend INTEGER NOT NULL," +
+             "yearsFrom INTEGER, "+
+             "yearsTo INTEGER, "+
              " FOREIGN KEY(id_brend) REFERENCES brend(id) ON DELETE CASCADE);";
     public static final String CREATE_ENGINE_TABLE = "CREATE TABLE "+ENGINE_TABLE+
             "(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
             "value INTEGER NOT NULL, " +
             "id_model TEGER NOT NULL," +
             " FOREIGN KEY(id_model) REFERENCES model(id) ON DELETE CASCADE);";
-
 
 
 

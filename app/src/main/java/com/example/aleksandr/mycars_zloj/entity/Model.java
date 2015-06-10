@@ -9,6 +9,8 @@ public class Model implements StaticVariables{
     private int id;
     private String nameModel;
     private int id_brend;
+    private int yearsFrom;
+    private int yearsTo;
 
     public Model() {
     }
@@ -47,5 +49,28 @@ public class Model implements StaticVariables{
 
     public void setId_brend(int id_brend) {
         this.id_brend = id_brend;
+    }
+
+    public int getYearsFrom() {
+        return yearsFrom;
+    }
+
+    public void setYearsFrom(int yearsFrom) {
+        this.yearsFrom = yearsFrom;
+    }
+
+    public int getYearsTo() {
+        return yearsTo;
+    }
+
+    public void setYearsTo(int yearsTo) {
+        this.yearsTo = yearsTo;
+    }
+
+    public Model(String nameModel, int id_brend, int yearsFrom, int yearsTo) {
+        this.nameModel = nameModel;
+        this.id_brend = id_brend;
+        this.yearsFrom = yearsFrom;
+        this.yearsTo = yearsTo;
     }
 }
