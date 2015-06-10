@@ -406,6 +406,7 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
 
             }
         });
+        modelActivity.showModel();
         showEngine();
     }
 
