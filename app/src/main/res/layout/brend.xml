@@ -1,25 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="horizontal"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-    android:gravity="right"
-    android:background="#eaffb7">
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#eaffb7"
+    style="@android:style/ButtonBar">
 
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/spBrend"
-        android:layout_weight="1"
-        android:spinnerMode="dropdown" />
-    <Button
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/Edit"
-        android:id="@+id/btEditBrend"
-        android:layout_weight="2.5"
-        android:onClick="doTransaction"
-        android:background="#fff2ff00"
-        android:textColor="#ff000000" />
+        android:layout_weight="1">
+
+        <Spinner
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spBrend"
+            android:spinnerMode="dropdown"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:gravity="left"
+            style="@android:style/Widget.Spinner.DropDown" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2.5">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:text="@string/Edit"
+            android:id="@+id/btEditBrend"
+            android:layout_weight="2.5"
+            android:onClick="doTransaction"
+            android:background="#fff2ff00"
+            android:textColor="#ff000000" />
+    </LinearLayout>
 
 </LinearLayout>

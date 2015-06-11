@@ -8,19 +8,17 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ll_brend"
-        android:gravity="right">
+        android:id="@+id/ll_brend">
 
     </LinearLayout>
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ll_model"
-        android:gravity="right">
+        android:id="@+id/ll_model">
 
     </LinearLayout>
     <LinearLayout
