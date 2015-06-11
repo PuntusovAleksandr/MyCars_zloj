@@ -92,14 +92,23 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
 
         switch (view.getId()) {
             case R.id.btEditBrend:
+//                if (modelFragmentByTag != null) {
+//                    transaction.remove(modelActivity);
+//                }
                 if (modelFragmentByTag != null) {
+                    transaction.remove(brendActivity);
                     transaction.remove(modelActivity);
+                    showActivity(COMAND_BREND);
                 }
                 break;
 
             case R.id.btEditModel:
+//                if (brendFragmentByTag != null) {
+//                    transaction.remove(brendActivity);
+//                }
                 if (brendFragmentByTag != null) {
-                    transaction.remove(brendActivity);
+                    transaction.remove(modelActivity);
+                    showActivity(COMAND_MODEL);
                 }
                 break;
 
@@ -110,11 +119,16 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
                 if (!(modelFragmentByTag.isVisible())) {
                     transaction.add(R.id.ll_model, modelActivity, ModelActivity.TAG);
                 }
+                showActivity(COMAND_ENGINE);
                 break;
 
             case R.id.btAdd:
-                if (brendFragmentByTag.isVisible() &&
+                //addition brends
+                if (!(brendFragmentByTag.isVisible()) &&
                         !(modelFragmentByTag.isVisible())) {
+
+//                    if (brendFragmentByTag.isVisible() &&
+//                        !(modelFragmentByTag.isVisible())) {
                     alert.setTitle("Are you sure add "+editText.getText().toString()+"?");
                     alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
@@ -135,8 +149,12 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
                     });
                     alert.show();
                 }
-                if (!(brendFragmentByTag.isVisible()) &&
-                        modelFragmentByTag.isVisible()) {
+                // addition models
+                if (brendFragmentByTag.isVisible() &&
+                        !(modelFragmentByTag.isVisible())) {
+
+//                    if (!(brendFragmentByTag.isVisible()) &&
+//                        modelFragmentByTag.isVisible()) {
                     alert.setTitle("Are you sure add "+editText.getText().toString()+"?");
                     alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
@@ -156,8 +174,12 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
                     });
                     alert.show();
                 }
+                // addition engenes
                 if (brendFragmentByTag.isVisible() &&
                         modelFragmentByTag.isVisible()) {
+
+//                    if (brendFragmentByTag.isVisible() &&
+//                        modelFragmentByTag.isVisible()) {
                     alert.setTitle("Are you sure add "+editText.getText().toString()+"?");
                     alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
@@ -179,11 +201,15 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
                 break;
 
             case R.id.btRemove:
-                if (editText.getText() != null ||
-                        !(editText.getText().toString().equals(""))) {
+                //delete brends
+                if (!(brendFragmentByTag.isVisible()) &&
+                        !(modelFragmentByTag.isVisible())) {
+
+//                    if (editText.getText() != null ||
+//                        !(editText.getText().toString().equals(""))) {
                     if (brendFragmentByTag.isVisible() &&
                             !(modelFragmentByTag.isVisible())) {
-                        alert.setTitle("Are you sure delite " + editText.getText().toString() + "?");
+                        alert.setTitle("Are you sure delite ?");
                         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -203,8 +229,12 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
                         });
                         alert.show();
                     }
-                    if (!(brendFragmentByTag.isVisible()) &&
-                            modelFragmentByTag.isVisible()) {
+                    // delete models
+                    if (brendFragmentByTag.isVisible() &
+                            !(modelFragmentByTag.isVisible())) {
+
+//                        if (!(brendFragmentByTag.isVisible()) &&
+//                            modelFragmentByTag.isVisible()) {
                         alert.setTitle("Are you sure delite " + ModelActivity.spModel.getSelectedItem().toString() + "?");
                         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
@@ -224,9 +254,13 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
                         });
                         alert.show();
                     }
+                    // delete engines
                     if (brendFragmentByTag.isVisible() &&
                             modelFragmentByTag.isVisible()) {
-                        alert.setTitle("Are you sure delite " + editText.getText().toString() + "?");
+
+//                        if (brendFragmentByTag.isVisible() &&
+//                            modelFragmentByTag.isVisible()) {
+                        alert.setTitle("Are you sure delite ?");
                         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -251,8 +285,12 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
             case R.id.btRename:
                 if (editText.getText() != null ||
                         !(editText.getText().toString().equals(""))) {
-                    if (brendFragmentByTag.isVisible() &&
+                    // reneme brends
+                    if (!(brendFragmentByTag.isVisible()) &&
                             !(modelFragmentByTag.isVisible())) {
+
+//                        if (brendFragmentByTag.isVisible() &&
+//                            !(modelFragmentByTag.isVisible())) {
                         alert.setTitle("Are you sure delite " + editText.getText().toString() + "?");
                         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
@@ -274,8 +312,12 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
                         });
                         alert.show();
                     }
-                    if (!(brendFragmentByTag.isVisible()) &&
-                            modelFragmentByTag.isVisible()) {
+                    // rename models
+                    if (brendFragmentByTag.isVisible() &&
+                            !(modelFragmentByTag.isVisible())) {
+
+//                        if (!(brendFragmentByTag.isVisible()) &&
+//                            modelFragmentByTag.isVisible()) {
                         alert.setTitle("Are you sure delite " + editText.getText().toString() + "?");
                         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
@@ -296,8 +338,12 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
                         });
                         alert.show();
                     }
+                    // rename engines
                     if (brendFragmentByTag.isVisible() &&
                             modelFragmentByTag.isVisible()) {
+
+//                        if (brendFragmentByTag.isVisible() &&
+//                            modelFragmentByTag.isVisible()) {
                         alert.setTitle("Are you sure delite " + editText.getText().toString() + "?");
                         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
@@ -318,7 +364,7 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
                         alert.show();
                     }
                 } else {
-                    Toast.makeText(this, "Null place", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Null place. \nPlease input date", Toast.LENGTH_LONG).show();
                 }
 
                 break;
@@ -326,6 +372,10 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
 
         transaction.addToBackStack(null);
         transaction.commit();
+
+    }
+
+    private void showActivity(String comandBrend) {
 
     }
 
