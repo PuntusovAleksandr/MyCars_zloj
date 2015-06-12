@@ -291,7 +291,7 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
 
 //                        if (brendFragmentByTag.isVisible() &&
 //                            !(modelFragmentByTag.isVisible())) {
-                        alert.setTitle("Are you sure delite " + editText.getText().toString() + "?");
+                        alert.setTitle("Are you sure rename " + editText.getText().toString() + "?");
                         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -318,7 +318,7 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
 
 //                        if (!(brendFragmentByTag.isVisible()) &&
 //                            modelFragmentByTag.isVisible()) {
-                        alert.setTitle("Are you sure delite " + editText.getText().toString() + "?");
+                        alert.setTitle("Are you sure rename " + editText.getText().toString() + "?");
                         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -344,7 +344,7 @@ public class MainActivity extends FragmentActivity implements StaticVariables {
 
 //                        if (brendFragmentByTag.isVisible() &&
 //                            modelFragmentByTag.isVisible()) {
-                        alert.setTitle("Are you sure delite " + editText.getText().toString() + "?");
+                        alert.setTitle("Are you sure rename " + editText.getText().toString() + "?");
                         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
